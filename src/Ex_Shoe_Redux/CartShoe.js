@@ -66,6 +66,15 @@ class CartShoe extends Component {
             );
           })}
         </tbody>
+        <thead>
+          <th>
+            Payment:{" "}
+            {this.props.cart.reduce((total, item) => {
+              return (total = total + item.price * item.carQuatity);
+            }, 0)}
+            {"$"}
+          </th>
+        </thead>
       </table>
     );
   }

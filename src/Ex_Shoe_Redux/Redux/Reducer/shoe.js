@@ -40,9 +40,9 @@ export let shoeReducer = (state = initialState, action) => {
     }
     case "DELETE_ITEM": {
       const newCart = [...state.cart];
-      let index = newCart.findIndex((item) => item.id === action.payload.index);
+      let index = newCart.findIndex((item) => item.id === action.payload);
       console.log(index);
-      if (index !== 1) {
+      if (index !== -1) {
         newCart.splice(action.payload.index, 1);
       }
       state.cart = newCart;
